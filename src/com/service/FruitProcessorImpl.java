@@ -15,7 +15,7 @@ public class FruitProcessorImpl implements IFruitProcessor {
 		service = new FruitService();
 	}
 
-	public List<Fruit> getFruitWithChanges(ITranspiration transpiration){
+	public List<Fruit> getFruitWithChanges(ITranspiration transpiration, int days, int lostWeight){
 		List<Fruit> harvestList = service.generateFruitCollection();
 		List<Fruit> warehouseList = new ArrayList<Fruit>();
 		
@@ -23,8 +23,6 @@ public class FruitProcessorImpl implements IFruitProcessor {
 			final Fruit wareFruit = new Fruit(fruit.getWeight() - 1, fruit.getColor(), fruit.getCountry());
 			warehouseList.add(wareFruit);
 		}
-		
-		int days = 3;
 		
 		for(int i = 0; i< harvestList.size(); i++){
 			TranspirationIndex index = transpiration.calculate(harvestList.get(i), warehouseList.get(i), days);

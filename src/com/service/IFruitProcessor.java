@@ -7,6 +7,6 @@ import com.service.transpiration.ITranspiration;
 
 public interface IFruitProcessor {
 	
-	List<Fruit> getFruitWithChanges(ITranspiration transpiration);
+	List<Fruit> getFruitWithChanges(ITranspiration transpiration, int days, int lostWeight);
 
 }

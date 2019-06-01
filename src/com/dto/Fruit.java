@@ -8,7 +8,7 @@ public class Fruit {
 	private int weight;
 	private Color color;
 	private String country;
-	private Map<Integer, TranspirationIndex> fruitTranspirationStat;
+	private Map<Integer, TranspirationIndex> fruitTranspirationStat; //key - number of days, value TranspirationIndex for days
 	
 	public Fruit(int weight, Color color, String country) {
 		super();
