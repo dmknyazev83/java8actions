@@ -28,11 +28,13 @@ public class FruitService implements IFruitService {
 		final Random rWeigth = new Random();
 		final Random rColor = new Random();
 		final Random rCountry = new Random();
+		IFruitCreator<Integer, Color, String, Fruit> creator = Fruit :: new;
 
 		for(int i = 1; i <= size; i++){
-			fruitList.add(new Fruit(rWeigth.ints(2, 50).findFirst().getAsInt(), 
-				Color.getByIntValue(rColor.ints(1, 5).findFirst().getAsInt()), 
-				COUNTRIES[rCountry.ints(0, COUNTRIES.length).findFirst().getAsInt()]));
+			final Fruit fruit = creator.create(rWeigth.ints(2, 50).findFirst().getAsInt(), 
+					Color.getByIntValue(rColor.ints(1, 5).findFirst().getAsInt()),
+					COUNTRIES[rCountry.ints(0, COUNTRIES.length).findFirst().getAsInt()]);
+			fruitList.add(fruit);
 		}
 		return fruitList;
 	}
