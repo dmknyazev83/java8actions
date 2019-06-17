@@ -1,6 +1,8 @@
 package com.service;
 
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -28,6 +30,15 @@ public class FruitServiceTest {
 		Assert.assertNotNull(f0.getColor());
 		Assert.assertNotNull(f0.getCountry());
 		Assert.assertTrue(f0.getFruitTranspirationStat().size() <= 0);		
+	}
+	
+	@Test
+	public void analizeFilterOnFruitColleactionStreamTest(){
+		final List<Fruit> fruits = fruitService.generateFruitCollection();
+		final List<Fruit> franceFruits = fruits.stream().filter(f -> f.getCountry().equals("France")).collect(Collectors.toList());
+		
+		franceFruits.stream().forEach(item -> Assert.assertTrue("France".equals(item.getCountry())));
+		
 	}
 
 }

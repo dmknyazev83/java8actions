@@ -14,13 +14,6 @@ public class RunnerGeneratedFilter {
 		IFruitService fruitService = new FruitService();
 		final List<Fruit> fruits = fruitService.generateFruitCollection(40);
 		printList(fruits);
-		System.out.println("-------------------------------------------");
-		System.out.println("Friuts from France and weight > 10");
-		final List<Fruit> someFranceFruits = fruits.stream()
-		.filter(fr -> fr.getWeight() > 10 && fr.getCountry().equalsIgnoreCase("France"))
-		.collect(Collectors.toList());
-		printList(someFranceFruits);
-		System.out.println("-------------------------------------------");
 		
 		List<Long> numbers = Arrays.asList(2L, 5L, 3L, 12L, 6L, 3L, 4L, 2L);
 		List<Long> evenNmbers = numbers.stream().filter(item -> item%2 == 0).distinct().collect(Collectors.toList());
