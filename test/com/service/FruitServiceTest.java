@@ -1,7 +1,6 @@
 package com.service;
 
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.junit.Before;
@@ -9,7 +8,7 @@ import org.junit.Test;
 
 import com.dto.Fruit;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 public class FruitServiceTest {
 	
