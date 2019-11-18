@@ -18,6 +18,15 @@ public class StreamFilteringTest {
 		
 		List<Long> limitedList = numbers.stream().limit(5).collect(Collectors.toList());
 		Assert.assertTrue(limitedList.size() == 5);
+		
+		int skipSize = 8;
+		List<Long> splittedList = numbers.stream().skip(skipSize).collect(Collectors.toList());
+		Assert.assertTrue(splittedList.size() == numbers.size() - skipSize);
+		
+		List<Long> numbersGr4 = numbers.stream().filter(n -> n > 4).distinct().collect(Collectors.toList());
+		Assert.assertTrue(numbersGr4 != null);
+		
+		
 	}
 
 }
