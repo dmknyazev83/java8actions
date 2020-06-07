@@ -10,7 +10,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import com.dto.Trader;
-import com.dto.Transaction;
+import com.dto.transaction.Transaction;
 
 public class StreamMatchersTest {
 	
@@ -25,12 +25,12 @@ public class StreamMatchersTest {
 		final Trader vladimir = new Trader("Vladimir", "Berlin");
 		
 		List<Transaction> transList = Arrays.asList(
-				new Transaction(oleg, 2019, 4000),
-				new Transaction(mario, 2019, 150),
-				new Transaction(victor, 2016, 3850),
-				new Transaction(alex, 2019, 5100),
-				new Transaction(denis, 2017, 4200),
-				new Transaction(vladimir, 2019, 4400));
+				new Transaction(oleg, 2019, 4000, true),
+				new Transaction(mario, 2019, 150, true),
+				new Transaction(victor, 2016, 3850, true),
+				new Transaction(alex, 2019, 5100, true),
+				new Transaction(denis, 2017, 4200, true),
+				new Transaction(vladimir, 2019, 4400, true));
 		
 		//find all transactions of year 2019 and sort them by value
 		List<Transaction> trans2019Sorted = transList.stream().filter(item -> item.getYear() == 2019)

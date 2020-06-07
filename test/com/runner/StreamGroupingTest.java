@@ -11,7 +11,7 @@ import org.junit.Test;
 
 import com.dto.Country;
 import com.dto.Trader;
-import com.dto.Transaction;
+import com.dto.transaction.Transaction;
 
 public class StreamGroupingTest {
 	
@@ -31,12 +31,12 @@ public class StreamGroupingTest {
 		final Trader alex = new Trader(ALEX, "Berlin");
 
 		transactionList = Arrays.asList(
-				new Transaction(oleg, 2019, 4000),
-				new Transaction(mario, 2019, 150),
-				new Transaction(victor, 2016, 3850),
-				new Transaction(alex, 2019, 5100),
-				new Transaction(alex, 2017, 4200),
-				new Transaction(victor, 2019, 4400));
+				new Transaction(oleg, 2019, 4000, true),
+				new Transaction(mario, 2019, 150, true),
+				new Transaction(victor, 2016, 3850, true),
+				new Transaction(alex, 2019, 5100, true),
+				new Transaction(alex, 2017, 4200, true),
+				new Transaction(victor, 2019, 4400, true));
 	}
 	
 	@Test
